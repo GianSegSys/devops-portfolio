@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    environment {
+        INSTAGRAM_GS="@gsegoviaq"
+    }
+    stages{
+        stage("Greeting") {
+            steps {
+                echo "Hello world!"
+            }
+        }
+        stage("Printing Environment Variables") {
+            steps {
+                echo "${env.INSTAGRAM_GS}"
+                echo "${INSTAGRAM_GS}"
+                echo "$INSTAGRAM_GS"
+                sh "echo 'Hello again!'"
+            }
+        }
+    }
+}
