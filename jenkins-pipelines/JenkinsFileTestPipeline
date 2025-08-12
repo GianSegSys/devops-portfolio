@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         INSTAGRAM_GS="@gsegoviaq"
+        INSTAGRAM_GL="@glunah"
     }
     stages{
         stage("Greeting") {
@@ -14,6 +15,14 @@ pipeline {
                 echo "${env.INSTAGRAM_GS}"
                 echo "${INSTAGRAM_GS}"
                 echo "$INSTAGRAM_GS"
+                sh "echo 'Hello again!'"
+            }
+        }
+        stage("Second Printing Environment Variables") {
+            steps {
+                echo "${env.INSTAGRAM_GL}"
+                echo "${INSTAGRAM_GL}"
+                echo "$INSTAGRAM_GL"
                 sh "echo 'Hello again!'"
             }
         }
